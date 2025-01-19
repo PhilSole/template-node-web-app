@@ -1,0 +1,26 @@
+{
+  "name": "my-app",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "parcel serve src/index.html --port 1234",
+    "clean": "rimraf dist .parcel-cache",
+    "build": "npm run clean && parcel build src/index.html && workbox generateSW workbox-config.js && npx copyfiles -u 1 \"public/**/*\" dist && node scripts/inject-sw.js",
+    "serve:dist": "http-server dist -p 8080"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@parcel/packager-raw-url": "^2.13.3",
+    "@parcel/transformer-sass": "^2.13.3",
+    "@parcel/transformer-webmanifest": "^2.13.3",
+    "copyfiles": "^2.4.1",
+    "http-server": "^14.1.1",
+    "parcel": "^2.13.3",
+    "rimraf": "^6.0.1",
+    "workbox-cli": "^7.3.0"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
