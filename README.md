@@ -26,10 +26,12 @@ clean
 
 Removes dist and the Parcel cache.
 Typically uses rimraf or a similar tool to delete folders.
+
 start
 
 Runs Parcel’s dev server for src/index.html.
 Use for quick local development (no service worker or file hashing in dev mode).
+
 build
 
 Cleans the old build.
@@ -37,10 +39,12 @@ Bundles production files via Parcel (which applies hashing, minification, etc.).
 Generates a service worker with Workbox (workbox generateSW).
 Copies all public folder files into dist.
 Injects a script reference into dist/index.html (inject-sw.js modifies the HTML).
+
 serve:dist
 
 Serves the dist folder with a simple static server (e.g., using http-server or serve).
 Useful for testing the production build, including service worker behavior.
+
 USAGE STEPS
 
 Install Dependencies:
@@ -58,6 +62,7 @@ Test the Production Build Locally:
 npm run serve:dist
 
 Serves dist/ at localhost (port varies). Check DevTools to confirm service worker is registered.
+
 CUSTOMIZING
 
 • Sass: Put your SCSS in src/styles/ (or any folder). Parcel compiles it if you import or link to .scss files.
